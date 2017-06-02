@@ -38,7 +38,7 @@ public class RequestHandler implements MessageHandler{
 		Message<?> mess= simpleMessageStore.getMessage((UUID) message.getPayload());
 		System.out.println("The message is:"+mess);
 		//simpleMessageStore.iterator();
-		System.out.println("After calling the claim checkin:::"+mess.getHeaders().getId().compareTo(message.getHeaders().getId()));
+		System.out.println("After calling the claim checkin:::"+mess.getHeaders().getId().compareTo((UUID) message.getPayload()));
 		return mess;
 		
 	}
